@@ -1,0 +1,50 @@
+<%- include("../partials/header") %>
+
+<h2>Edit Assignment</h2>
+
+<form action="/assignments/<%= assignment._id %>?_method=PUT" method="POST">
+
+  <div class="mb-3">
+    <label>Course Code</label>
+    <input name="courseCode" value="<%= assignment.courseCode %>" class="form-control">
+  </div>
+
+  <div class="mb-3">
+    <label>Title</label>
+    <input name="title" value="<%= assignment.title %>" class="form-control">
+  </div>
+
+  <div class="mb-3">
+    <label>Description</label>
+    <textarea name="description" class="form-control"><%= assignment.description %></textarea>
+  </div>
+
+  <div class="mb-3">
+    <label>Due Date</label>
+    <input type="date" name="dueDate" value="<%= assignment.dueDate.toISOString().substring(0,10) %>" class="form-control">
+  </div>
+
+  <div class="mb-3">
+    <label>Status</label>
+    <select name="status" class="form-select">
+      <option <%= assignment.status==="Not Started"?'selected':'' %>>Not Started</option>
+      <option <%= assignment.status==="In Progress"?'selected':'' %>>In Progress</option>
+      <option <%= assignment.status==="Completed"?'selected':'' %>>Completed</option>
+    </select>
+  </div>
+
+  <div class="mb-3">
+    <label>Priority</label>
+    <select name="priority" class="form-select">
+      <option <%= assignment.priority==="High"?'selected':'' %>>High</option>
+      <option <%= assignment.priority==="Medium"?'selected':'' %>>Medium</option>
+      <option <%= assignment.priority==="Low"?'selected':'' %>>Low</option>
+    </select>
+  </div>
+
+  <button class="btn btn-primary">Update</button>
+  <a href="/assignments" class="btn btn-secondary">Cancel</a>
+
+</form>
+
+<%- include("../partials/footer") %>

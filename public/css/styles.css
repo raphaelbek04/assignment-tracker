@@ -1,0 +1,36 @@
+
+body {
+  background: #f5f2fc;
+}
+
+/* Cards / panels */
+.card {
+  border-radius: 12px;
+  border: none;
+  box-shadow: 0 2px 10px rgba(90, 47, 205, 0.1);
+}
+
+/* Purple button */
+.btn-primary {
+  background: #5A2FCD;
+  border-color: #5A2FCD;
+}
+.btn-primary:hover {
+  background: #4725a6;
+}
+
+/* Purple outlines */
+.btn-outline-primary {
+  color: #5A2FCD;
+  border-color: #5A2FCD;
+}
+.btn-outline-primary:hover {
+  background:#5A2FCD;
+  color: white;
+}
+
+/* Table styling */
+table thead {
+  background:#5A2FCD;
+  color:white;
+}

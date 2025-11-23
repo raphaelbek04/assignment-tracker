@@ -1,0 +1,33 @@
+<%- include("../partials/header") %>
+
+<h2 class="mb-3">All Assignments</h2>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Course</th>
+      <th>Title</th>
+      <th>Due</th>
+      <th>Status</th>
+      <th>Priority</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% assignments.forEach(a => { %>
+      <tr>
+        <td><%= a.courseCode %></td>
+        <td><%= a.title %></td>
+        <td><%= a.dueDate.toDateString() %></td>
+        <td><%= a.status %></td>
+        <td><%= a.priority %></td>
+        <td>
+          <a href="/assignments/<%= a._id %>/edit" class="btn btn-primary btn-sm">Edit</a>
+          <a href="/assignments/<%= a._id %>/delete" class="btn btn-danger btn-sm">Delete</a>
+        </td>
+      </tr>
+    <% }) %>
+  </tbody>
+</table>
+
+<%- include("../partials/footer") %>
